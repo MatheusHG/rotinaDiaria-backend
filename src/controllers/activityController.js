@@ -31,13 +31,14 @@ router.post('/', async (req, res) => {
 
 router.put('/:activityId', async (req, res) => {
     try {
-        const { title, date, time, description } = req.body
+        const { title, date, time, description, priority } = req.body
 
         const activity = await Activity.findByIdAndUpdate(req.params.activityId, {
             title,
             date,
             time,
-            description
+            description,
+            priority
         }, { new: true })
 
         await activity.save()
