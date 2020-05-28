@@ -17,6 +17,9 @@ const ActivitySchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    priority:{
+        type: String
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
