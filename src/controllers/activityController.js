@@ -18,6 +18,18 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/search', async (req, res) => {
+    const { title } = req.query
+    
+    const activityResponse = await Activity.find({ title })
+    
+    if(activityResponse){
+        
+        return res.json( activityResponse )
+    }
+    return res.status(400).json({error: 'Activity not found'})
+})
+
 router.post('/', async (req, res) => {
     try{
         const activity = await Activity.create({ ...req.body, user: req.userId })
