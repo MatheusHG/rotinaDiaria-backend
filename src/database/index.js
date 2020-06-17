@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://la:nego22@ds263448.mlab.com:63448/omnistack", { 
+mongoose.connect("mongodb+srv://codex:admin123@cluster0-7n0qk.mongodb.net/Cluster0?retryWrites=true&w=majority", { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
